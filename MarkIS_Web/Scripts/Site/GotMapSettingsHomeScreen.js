@@ -15,4 +15,5 @@ GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.PreDefinedWmsLayerDef
 
 
 GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.PreDefinedWmsLayerDefinitions.population);
+GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.FKWmsLayerDefinitions.open_Cykelbanor);
 //GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.PreDefinedWmsLayerDefinitions.Orto_Latest);
