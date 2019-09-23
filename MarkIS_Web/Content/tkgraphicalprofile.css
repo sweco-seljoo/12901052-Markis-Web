@@ -1,0 +1,67 @@
+﻿.navbar,
+.navbar li.active ul a,
+.navbar li.open ul a,
+.side-nav,
+.dropdown-menu,
+.gotmap-menu-control,
+.gotmap-menu-submenu, 
+.dropdown-menu {
+  background-color: #3a659f !important;
+  border-color: #163e74 !important;
+}
+
+.navbar a,
+.navbar li,
+.side-nav li,
+.side-nav li a,
+.gotmap-menu-control a,
+.gotmap-menu-control li span,
+.dropdown-menu {
+    color: #fff !important;
+}
+
+.navbar .selected,
+.navbar .active,
+.navbar li.active a,
+.navbar li a:active,
+.navbar li.active a:active,
+.navbar li.open a,
+.navbar li.open a:active,
+.navbar a:hover,
+.navbar a:active,
+.navbar li:hover,
+.navbar li.active ul a:hover,
+.navbar li.active ul a:active,
+.navbar li.open ul a:hover,
+.navbar li.open ul a:active,
+.side-nav .selected,
+.side-nav a:hover,
+.side-nav li.active,
+.side-nav a:focus,
+.side-nav a:active,
+.dropdown-menu a:hover, 
+.dropdown-menu a:active, 
+.dropdown-menu li:hover,
+.gotmap-menu-control .selected,
+.gotmap-menu-control .active,
+.gotmap-menu-control .active a,
+.gotmap-menu-control a:active,
+.gotmap-menu-control li a:hover,
+.gotmap-menu-control li a:active,
+.gotmap-menu-control li span:hover,
+.gotmap-menu-submenu li:hover,
+.gotmap-menu-submenu .selected,
+.gotmap-menu-submenu .active,
+.gotmap-menu-submenu .active a,
+.gotmap-menu-submenu a:active,
+.gotmap-menu .brand:hover,
+.gotmap-menu .brand:active {
+    background-color: #163e74 !important;
+}
+
+.navbar .caret,
+.side-nav .caret,
+.gotmap-menu-caret {
+    border-top-color: #fff !important;
+    border-bottom-color: #fff !important;
+}

@@ -1,0 +1,277 @@
+﻿body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+	white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+	max-width: 280px;
+}
+
+.example {
+	margin: 0;
+	padding: 0;
+	border: #e6e0e0 2px solid;
+	float: left;
+	margin: 15px;
+	width: 150px;
+	height: 100px;
+	line-height: 90px;
+	font-size: 32px;
+	text-align: center;
+}
+
+.example:hover {
+	background: #e6e0e0;
+}
+
+.selected {
+	background-color: #080808;
+}
+
+.side-nav-content-wrapper {
+	position:fixed; 
+	top: 50px;
+	left: 225px;
+	right: 0px;
+	bottom:0px;
+	overflow-y: auto;
+	padding: 15px;
+}
+
+.side-nav {
+	width: 225px;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	height: 100%;
+	border-radius: 0;
+	border: none;
+	background-color: #222222;
+	overflow-y: auto;
+}
+
+.side-nav li {
+	list-style: none;
+	display:block;
+	font-size: 14px;
+	width: 100%;
+}
+.side-nav li a {
+	color:#aaa;
+}
+.side-nav li a:hover {
+	color:#fff;
+	background: #000;
+} 
+
+.custom-geojeon-properties {
+	width: 100%;
+}
+	.custom-geojeon-properties th {
+		font-style: italic;
+	}
+	.custom-geojeon-properties tr td:nth-child(1){
+		font-weight:bold;
+		padding-right: 15px;
+		width: 250px;
+	}
+	.custom-geojeon-properties tr td:nth-child(2){
+		font-weight:bold;
+		padding-right: 15px;
+		width: 50px;
+	}
+	.custom-geojeon-properties tr td:nth-child(3){
+		color: blue;
+		padding-right: 15px;
+		width: 70px;
+	}
+	.custom-geojeon-properties tr{
+		background-color: #f0f0f0;
+	}
+	.custom-geojeon-properties tr:nth-child(2n+1){
+		background-color: #e0e0e0;
+	}
+
+.hljs {
+    background-color: transparent;
+}
+
+pre {
+    padding: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.leaflet-popup-content-wrapper {
+    background-color: #f1f1f1;
+}
+.wmsinfo-popup {
+    margin-top:8px;
+    padding: 4px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    border: #267fca 2px solid;
+}
+
+    .wmsinfo-popup .header {
+        font-size:14px;
+        color: #267fca;
+        border-bottom: #267fca 1px solid;
+    }
+
+
+    .wmsinfo-popup .header2 {
+        margin-top:4px;
+        font-size:12px;
+        color: #267fca;
+        border-bottom: #267fca 1px solid;
+    }
+
+    .wmsinfo-popup .date {
+        font-style:italic;
+    }
+
+    .wmsinfo-popup .actionlink {
+        margin-top: 2px;
+    }
+    .wmsinfo-popup .id {
+        float: right;
+    }
+
+    .startpermission-archived-popup {
+        border-color: #030302;
+    }
+    .startpermission-foranmalan-popup {
+        border-color: #808080;
+    }
+    .startpermission-godkanda-popup {
+        border-color: #ff9a00;
+    }
+    .startpermission-pagande-popup {
+        border-color: #b30086;
+    }
+    .evenemang-forkannedom-popup {
+        border-color: #dddddd;
+    }
+    .evenemang-lagprio-popup {
+        border-color: #77ff33;
+    }
+    .evenemang-mediumprio-popup {
+        border-color: #ffff00;
+    }
+    .evenemang-hogprio-popup {
+        border-color: #cc0000;
+    }
+    .mop-popup {
+        border-color: #0000ff;
+    }
+
+.mapSliderContainer {
+    width:96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    position: absolute;
+    bottom: 28px;
+    opacity:0.8;
+    border-top: 1px solid #232a32 !important;
+    z-index: 1000;
+    display:table;
+    vertical-align:top;
+}
+
+.mapSliderContainer .k-widget {
+    border-radius: 0 !important;
+    border-top: 0px !important;
+}
+
+@media all and (-ms-high-contrast:none)
+{
+.mapSliderContainer .k-widget { margin-top:-1px; } /* IE10 */
+*::-ms-backdrop, .mapSliderContainer .k-widget { margin-top:-1px; } /* IE11 */
+}
+
+.mapSliderContainer .k-picker-wrap {
+    height: 100%;
+    border:0 !important;
+    border-radius: 0 !important;
+    background: #67707F;
+    background: -moz-linear-gradient(top, #67707F 0%, #888DA0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#67707F), color-stop(100%,#888DA0));
+}
+.mapSliderContainer .k-select{
+    height:34px !important;
+    background: #67707F;
+    background: -moz-linear-gradient(top, #67707F 0%, #888DA0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#67707F), color-stop(100%,#888DA0));
+    border-radius: 0 !important;
+    border-left: solid 1px #515862 !important;
+    border-right: solid 1px #515862 !important;
+    border-bottom: 1px solid #6a7179 !important;
+                        
+}
+
+.mapSlider {
+    width: 100%;
+    height: 32px !important;
+    border-bottom: 1px solid #6a7179;
+    border-top: 1px solid #232a32;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+    font-size: 12px;
+}
+
+.mapSlider .ui-rangeSlider-container {
+    height: 100%;
+    border-radius: 0px;
+}
+
+.mapSlider .ui-rangeSlider-bar {
+    background: none repeat scroll 0 0 #68a1d6;
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) inset;
+    cursor: pointer;
+    height: 32px !important;
+    margin: 0;
+}
+
+.mapSlider .ui-ruler-scale0 .ui-ruler-tick-inner {
+    border-left: 1px solid white;
+    color: white;
+    margin-top:0px !important;
+    height: 32px !important;
+}
+
+.mapSlider .ui-rangeSlider-label {
+    border-radius: 0px;
+    font-size: 11px;
+    padding: 2px 4px;
+}
+
+.mapSlider .ui-rangeSlider-label-inner {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    margin-left: -8px;
+    border-top: 6px solid #888DA0;
+}
+
+.ui-rangeSlider-handle {
+    width: 20px;
+}

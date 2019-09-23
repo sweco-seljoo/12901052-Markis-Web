@@ -1,0 +1,3 @@
+﻿GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.FKWmsLayerDefinitions.fvk_markistest);
+GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.FKWmsLayerDefinitions.population);
+GotMapEngine.Options.WmsLayerDefinitions.push(GotMapEngine.FKWmsLayerDefinitions.open_Cykelbanor);

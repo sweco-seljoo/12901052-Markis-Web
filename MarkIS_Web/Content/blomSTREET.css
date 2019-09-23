@@ -1,0 +1,634 @@
+﻿/*!↵ * Bootstrap v3.3.7 (http://getbootstrap.com)↵ * Copyright 2011-2016 Twitter, Inc.↵ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)↵ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+.panoramaViewerWindow {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+}
+.panoramaViewerWindow article,
+.panoramaViewerWindow aside,
+.panoramaViewerWindow details,
+.panoramaViewerWindow figcaption,
+.panoramaViewerWindow figure,
+.panoramaViewerWindow footer,
+.panoramaViewerWindow header,
+.panoramaViewerWindow hgroup,
+.panoramaViewerWindow main,
+.panoramaViewerWindow menu,
+.panoramaViewerWindow nav,
+.panoramaViewerWindow section,
+.panoramaViewerWindow summary {
+    display: block
+}
+.panoramaViewerWindow audio,
+.panoramaViewerWindow canvas,
+.panoramaViewerWindow progress,
+.panoramaViewerWindow video {
+    display: inline-block;
+    vertical-align: baseline
+}
+.panoramaViewerWindow audio:not([controls]) {
+    display: none;
+    height: 0
+}
+.panoramaViewerWindow [hidden],
+.panoramaViewerWindow template {
+    display: none
+}
+.panoramaViewerWindow a {
+    background-color: transparent
+}
+.panoramaViewerWindow a:active,
+.panoramaViewerWindow a:hover {
+    outline: 0
+}
+.panoramaViewerWindow abbr[title] {
+    border-bottom: 1px dotted
+}
+.panoramaViewerWindow b,
+.panoramaViewerWindow strong {
+    font-weight: 700
+}
+.panoramaViewerWindow dfn {
+    font-style: italic
+}
+.panoramaViewerWindow h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+.panoramaViewerWindow mark {
+    background: #ff0;
+    color: #000
+}
+.panoramaViewerWindow small {
+    font-size: 80%
+}
+.panoramaViewerWindow sub,
+.panoramaViewerWindow sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+.panoramaViewerWindow sup {
+    top: -.5em
+}
+.panoramaViewerWindow sub {
+    bottom: -.25em
+}
+.panoramaViewerWindow img {
+    border: 0
+}
+.panoramaViewerWindow svg:not(:root) {
+    overflow: hidden
+}
+.panoramaViewerWindow figure {
+    margin: 1em 40px
+}
+.panoramaViewerWindow hr {
+    box-sizing: content-box;
+    height: 0
+}
+.panoramaViewerWindow pre {
+    overflow: auto
+}
+.panoramaViewerWindow code,
+.panoramaViewerWindow kbd,
+.panoramaViewerWindow pre,
+.panoramaViewerWindow samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+.panoramaViewerWindow button,
+.panoramaViewerWindow input,
+.panoramaViewerWindow optgroup,
+.panoramaViewerWindow select,
+.panoramaViewerWindow textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+.panoramaViewerWindow button {
+    overflow: visible
+}
+.panoramaViewerWindow button,
+.panoramaViewerWindow select {
+    text-transform: none
+}
+.panoramaViewerWindow button,
+.panoramaViewerWindow html input[type=button],
+.panoramaViewerWindow input[type=reset],
+.panoramaViewerWindow input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+.panoramaViewerWindow button[disabled],
+.panoramaViewerWindow html input[disabled] {
+    cursor: default
+}
+.panoramaViewerWindow button::-moz-focus-inner,
+.panoramaViewerWindow input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+.panoramaViewerWindow input {
+    line-height: normal
+}
+.panoramaViewerWindow input[type=checkbox],
+.panoramaViewerWindow input[type=radio] {
+    box-sizing: border-box;
+    padding: 0
+}
+.panoramaViewerWindow input[type=number]::-webkit-inner-spin-button,
+.panoramaViewerWindow input[type=number]::-webkit-outer-spin-button {
+    height: auto
+}
+.panoramaViewerWindow input[type=search] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box
+}
+.panoramaViewerWindow input[type=search]::-webkit-search-cancel-button,
+.panoramaViewerWindow input[type=search]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+.panoramaViewerWindow fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+.panoramaViewerWindow legend {
+    border: 0;
+    padding: 0
+}
+.panoramaViewerWindow textarea {
+    overflow: auto
+}
+.panoramaViewerWindow optgroup {
+    font-weight: 700
+}
+.panoramaViewerWindow table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+.panoramaViewerWindow td,
+.panoramaViewerWindow th {
+    padding: 0
+}
+
+@font-face {
+    font-family: Glyphicons Halflings;
+    src: url(https://streetsmart.cyclomedia.com/api/v16.1/build/f4769f9bdb7466be65088239c12046d1.eot);
+    src: url(https://streetsmart.cyclomedia.com/api/v16.1/build/f4769f9bdb7466be65088239c12046d1.eot?#iefix) format('embedded-opentype'), url(https://streetsmart.cyclomedia.com/api/v16.1/build/448c34a56d699c29117adc64c43affeb.woff2) format('woff2'), url(https://streetsmart.cyclomedia.com/api/v16.1/build/fa2772327f55d8198301fdb8bcfc8158.woff) format('woff'), url(https://streetsmart.cyclomedia.com/api/v16.1/build/e18bbf611f2a2e43afc071aa2f4e1512.ttf) format('truetype'), url(https://streetsmart.cyclomedia.com/api/v16.1/build/89889688147bd7575d6327160d64e760.svg#glyphicons_halflingsregular) format('svg')
+}
+.panoramaViewerWindow .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: Glyphicons Halflings;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.panoramaViewerWindow .glyphicon-asterisk:before {
+    content: "*"
+}
+.panoramaViewerWindow .glyphicon-plus:before {
+    content: "+"
+}
+.panoramaViewerWindow .glyphicon-eur:before,
+.panoramaViewerWindow .glyphicon-euro:before {
+    content: "\20AC"
+}
+.panoramaViewerWindow .glyphicon-minus:before {
+    content: "\2212"
+}
+.panoramaViewerWindow .glyphicon-cloud:before {
+    content: "\2601"
+}
+.panoramaViewerWindow .glyphicon-envelope:before {
+    content: "\2709"
+}
+.panoramaViewerWindow .glyphicon-pencil:before {
+    content: "\270F"
+}
+.panoramaViewerWindow .glyphicon-glass:before {
+    content: "\E001"
+}
+.panoramaViewerWindow .glyphicon-music:before {
+    content: "\E002"
+}
+.panoramaViewerWindow .glyphicon-search:before {
+    content: "\E003"
+}
+.panoramaViewerWindow .glyphicon-heart:before {
+    content: "\E005"
+}
+.panoramaViewerWindow .glyphicon-star:before {
+    content: "\E006"
+}
+.panoramaViewerWindow .glyphicon-star-empty:before {
+    content: "\E007"
+}
+.panoramaViewerWindow .glyphicon-user:before {
+    content: "\E008"
+}
+.panoramaViewerWindow .glyphicon-film:before {
+    content: "\E009"
+}
+.panoramaViewerWindow .glyphicon-th-large:before {
+    content: "\E010"
+}
+.panoramaViewerWindow .glyphicon-th:before {
+    content: "\E011"
+}
+.panoramaViewerWindow .glyphicon-th-list:before {
+    content: "\E012"
+}
+.panoramaViewerWindow .glyphicon-ok:before {
+    content: "\E013"
+}
+.panoramaViewerWindow .glyphicon-remove:before {
+    content: "\E014"
+}
+.panoramaViewerWindow .glyphicon-zoom-in:before {
+    content: "\E015"
+}
+.panoramaViewerWindow .glyphicon-zoom-out:before {
+    content: "\E016"
+}
+.panoramaViewerWindow .glyphicon-off:before {
+    content: "\E017"
+}
+.panoramaViewerWindow .glyphicon-signal:before {
+    content: "\E018"
+}
+.panoramaViewerWindow .glyphicon-cog:before {
+    content: "\E019"
+}
+.panoramaViewerWindow .glyphicon-trash:before {
+    content: "\E020"
+}
+.panoramaViewerWindow .glyphicon-ho…enu li a:focus,
+.panoramaViewerWindow .viewer .navbar.navbar-default .navbar-nav .open .dropdown-menu li a:hover {
+    color: #ec7a08;
+    background-color: #bcbdbc
+}
+.panoramaViewerWindow .viewer .navbar.navbar-default .navbar-nav .open .dropdown-menu .active a,
+.panoramaViewerWindow .viewer .navbar.navbar-default .navbar-nav .open .dropdown-menu .active a:focus,
+.panoramaViewerWindow .viewer .navbar.navbar-default .navbar-nav .open .dropdown-menu .active a:hover {
+    color: #98c23c;
+    background-color: #ec7a08
+}
+.panoramaViewerWindow .viewer .navbar.navbar-default .navbar-nav .well-lg {
+    padding: 0
+}
+.panoramaViewerWindow .viewer .navbar-nav.navbar-left {
+    margin-left: -15px
+}
+.panoramaViewerWindow .nav-pills.nav-stacked li:focus,
+.panoramaViewerWindow .nav-pills.nav-stacked li a:focus {
+    outline: 0
+}
+.panoramaViewerWindow .nav-pills.nav-stacked .active {
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, .2) 8px, transparent 0)
+}
+.panoramaViewerWindow .dropdown-menu {
+    border-radius: 0
+}
+.panoramaViewerWindow .navbar-fixed-bottom .dropdown-menu,
+.panoramaViewerWindow .viewer .navbar-nav .dropdown-menu {
+    margin-bottom: 0
+}
+.panoramaViewerWindow .viewer .btn-group>button {
+    height: 46px;
+    width: 46px;
+    text-align: center;
+    padding: 0;
+    line-height: 46px;
+    background-color: transparent;
+    border: 0
+}
+.panoramaViewerWindow .viewer .btn-group .btn-group {
+    margin-right: 0
+}
+.panoramaViewerWindow .viewer button.btn {
+    margin-bottom: 0
+}
+.panoramaViewerWindow .viewer button.btn:active,
+.panoramaViewerWindow .viewer button.btn:focus,
+.panoramaViewerWindow .viewer button.btn:hover {
+    outline: 0
+}
+.panoramaViewerWindow .viewer .nav.navbar-nav.btn-toolbar {
+    margin-left: -15px
+}
+.panoramaViewerWindow .viewer .toolbar-panel {
+    position: absolute;
+    width: 100%;
+    bottom: 46px;
+    left: 0;
+    right: 0
+}
+.panoramaViewerWindow .viewer .panel {
+    display: table;
+    width: 100%;
+    left: 0;
+    right: 0;
+    border: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 0
+}
+.panoramaViewerWindow .viewer .panel .panel-heading {
+    padding: 3px 0 3px 15px;
+    background-color: #719522;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: none
+}
+.panoramaViewerWindow .viewer .panel .panel-body {
+    padding: 0
+}
+.panoramaViewerWindow .viewer .panel .nav-pills {
+    background-color: #98c23c;
+    padding-bottom: 10px
+}
+.panoramaViewerWindow .viewer .panel .nav-stacked>li {
+    float: none;
+    width: 100%
+}
+.panoramaViewerWindow .viewer .panel .nav-stacked>li a {
+    color: #fff;
+    width: 100%;
+    padding-left: 15px;
+    background: none;
+    text-align: left;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700
+}
+.panoramaViewerWindow .viewer .panel .nav-stacked>li a:active,
+.panoramaViewerWindow .viewer .panel .nav-stacked>li a:focus,
+.panoramaViewerWindow .viewer .panel .nav-stacked>li a:hover {
+    border: none;
+    background: none;
+    margin-bottom: 0
+}
+.panoramaViewerWindow .viewer .panel .nav-stacked>li a:hover {
+    text-decoration: underline
+}
+.panoramaViewerWindow .viewer .nav .dropup.open {
+    position: static
+}
+.panoramaViewerWindow .viewer .nav .dropup.open .dropdown-menu {
+    display: table;
+    width: 100%;
+    left: 0;
+    right: 0;
+    border: none;
+    border: 0;
+    box-shadow: none;
+    padding: 0
+}
+.panoramaViewerWindow .viewer .nav .dropup.open .dropdown-menu .nav-pills {
+    background-color: #98c23c;
+    padding-bottom: 10px
+}
+.panoramaViewerWindow .viewer .nav .dropup.open .nav-stacked>li {
+    float: none;
+    width: 100%
+}
+.panoramaViewerWindow .viewer .nav .dropup.open .nav-stacked>li a {
+    color: #fff;
+    width: 100%;
+    padding-left: 15px;
+    background: none;
+    text-align: left;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700
+}
+.panoramaViewerWindow .viewer .nav .dropup.open .nav-stacked>li a:active,
+.panoramaViewerWindow .viewer .nav .dropup.open .nav-stacked>li a:focus,
+.panoramaViewerWindow .viewer .nav .dropup.open .nav-stacked>li a:hover {
+    border: none;
+    background: none;
+    margin-bottom: 0
+}
+.panoramaViewerWindow .viewer .nav .dropup.open .nav-stacked>li a:hover {
+    text-decoration: underline
+}
+.panoramaViewerWindow .viewer .navbar-default .navbar-nav>.active>a,
+.panoramaViewerWindow .viewer .navbar-default .navbar-nav>.active>a:focus,
+.panoramaViewerWindow .viewer .navbar-default .navbar-nav>.active>a:hover {
+    margin-bottom: 0
+}
+.panoramaViewerWindow .viewer {
+    padding: 0;
+    border: 0;
+    background-color: #666;
+    height: 100%
+}
+.panoramaViewerWindow .navbar {
+    margin-bottom: 0
+}
+.panoramaViewerWindow .expandable-navbar-contracted nav {
+    width: 46px
+}
+.panoramaViewerWindow .expandable-navbar-contracted .glyphicon,
+.panoramaViewerWindow .expandable-navbar-contracted>.navbar.navbar-default {
+    background-color: transparent;
+    color: #fff
+}
+.panoramaViewerWindow .baselayerpanel,
+.panoramaViewerWindow .layerpanel {
+    overflow: auto
+}
+.panoramaViewerWindow .imageInformation {
+    position: absolute;
+    bottom: 0
+}
+.panoramaViewerWindow .window {
+    padding: 0;
+    border: 0;
+    background-color: #666;
+    position: relative
+}
+.panoramaViewerWindow .window .windowcontrols {
+    position: absolute;
+    top: 15px;
+    right: 5px;
+    z-index: 100
+}
+.panoramaViewerWindow .window .windowcontrols .btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    color: #fff
+}
+.panoramaViewerWindow .window .recordingTimestamp {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    z-index: 100;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    color: #fff
+}
+.panoramaViewerWindow .window .recordingTimestamp .value {
+    margin-left: 15px
+}
+.panoramaViewerWindow .window .timetravel {
+    position: absolute;
+    top: 50px;
+    left: 16px;
+    z-index: 100
+}
+.panoramaViewerWindow .window .timetravel .popover {
+    margin-left: 30px;
+    border-radius: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    border: none
+}
+.panoramaViewerWindow .window .timetravel .popover-content {
+    padding: 0;
+    cursor: pointer
+}
+.panoramaViewerWindow .window .timetravel .popover-content .travelDate {
+    position: absolute;
+    text-align: center;
+    background-color: hsla(0, 0%, 95%, .5);
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    display: block;
+    pointer-events: none
+}
+.panoramaViewerWindow .window .timetravel img {
+    width: 160px;
+    height: 160px
+}
+.panoramaViewerWindow .window .timetravel .slider.slider-vertical .slider-track {
+    width: 2px;
+    height: 100%;
+    margin-left: 1px;
+    left: 50%;
+    top: 0;
+    background-color: hsla(0, 0%, 100%, .2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5)
+}
+.panoramaViewerWindow .window .timetravel .slider.slider-vertical .slider-tick {
+    width: 8px;
+    height: 8px;
+    margin-top: -3px;
+    margin-left: -3px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    opacity: 1
+}
+.panoramaViewerWindow .window .timetravel .slider.slider-vertical .slider-handle {
+    width: 12px;
+    height: 12px;
+    margin-top: -4px;
+    margin-left: -5px;
+    background-image: none;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .5)
+}
+.panoramaViewerWindow .window .timetravel .slider-selection.tick-slider-selection,
+.panoramaViewerWindow .window .timetravel .slider-tick.in-selection {
+    background-image: none;
+    background-color: #fff
+}
+
+
+
+
+.panoramaViewerWindow .olControlAttribution {
+        background-color: #fff;
+        filter: alpha(opacity=60);
+        opacity: 0.6;
+        bottom: 0px !important;
+        display: block;
+        width: 100%;
+        font-size: smaller;
+        font-weight: bold;
+        position: absolute;
+        left: 0px;
+        color: #000;
+        padding: 5px 10px;
+    }
+
+    .panoramaViewerWindow *[disabled] {
+        opacity: 0.5;
+    }
+
+    .panoramaViewerWindow {
+        width: 100%;
+        height: 0px;
+        top: 50%;
+        z-index: 5;
+    }
+
+    .panoramaViewerWindow .recordingTimestamp {
+        position: relative;
+        top: 15px;
+        left: 20px;
+        z-index: 100;
+        text-shadow: 0 0 5px rgba(0,0,0,.5);
+        color: #fff;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Chrome/Safari/Opera */
+        -khtml-user-select: none; /* Konqueror */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+    }
+
+    .panoramaViewerWindow .panoramaAttribution {
+        z-index: 100;
+        position:absolute;
+        right: 8px;
+        bottom: 8px;
+        height: 21px;
+        line-height: 16px;
+        padding: 0;
+        background-color: rgba(0,0,0,.3);
+        border-radius: 4px;
+    }
+    .panoramaViewerWindow .panoramaAttribution a, .panoramaViewerWindow .panoramaAttribution a:hover {
+        color: #fff;
+        font-size: 10px;
+        text-shadow: none;
+        margin: 0 10px;
+    }
+
+    
+    .panoramaViewerWindow .window-loading-icon {
+        z-index: 100;
+        position: absolute;
+        margin-left: 50%;
+        top: 10px;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Chrome/Safari/Opera */
+        -khtml-user-select: none; /* Konqueror */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+    }
+
+    .panoramaViewerWindow .navbar {
+        display:none;
+        border: 0px;
+        border-radius: 0px;
+        background-color: #fff !important;
+    }

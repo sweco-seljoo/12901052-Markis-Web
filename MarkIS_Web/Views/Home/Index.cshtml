@@ -1,0 +1,441 @@
+﻿@using MarkisWeb.Helpers;
+
+@{
+
+    ViewBag.Title = "Markis Web";
+}
+
+
+
+ <link href="@(ViewBag.GotMapUrl)Dev/Extensions/GotMap.BlomSTREET-1.1.0.css" rel="stylesheet" />
+
+
+<!--suppress JSUnresolvedLibraryURL -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react.min.js"></script>
+<!--suppress JSUnresolvedLibraryURL -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom.min.js"></script>
+<!--suppress JSUnresolvedLibraryURL -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.17.1/ol.js"></script>
+<script type="text/javascript" src="https://streetsmart.cyclomedia.com/api/v16.1/Aperture.js"></script>
+<script type="text/javascript" src="https://streetsmart.cyclomedia.com/api/v16.1/StreetSmartApi.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+
+@* --- Application specific resources ----*@
+<script src="@Url.Content("~")Scripts/Site/MarkisHandler.js"></script>
+
+
+
+
+<div style="width:100%; height:100%;">
+    <div id="GotMap" style="width: 100%;height: 100%;"></div>
+</div>
+<script type="text/javascript">
+    if (GotMapEngine.IsMobile()) {
+        $('.navbar').hide();
+        $('#body-content').css('top', '0px');
+    }
+
+    var kommunagd_mark_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Kommunägd mark'
+        , Layer: 'fk.kommunagd-mark.wms.v1:kommunagd-mark'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var tomtratt_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Tomträtt'
+        , Layer: 'fk.tomtratt.wms.v1:tomtratt'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var detaljplan_mark_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Detaljplan mark'
+        , Layer: 'fk.detaljplan-mark.wms.v1:detaljplan-mark'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var forvaltningskartan_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Förvaltningskartan'
+        , Layer: 'fk.forvaltningskartan.wms.v1:fvk'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var befintlig_bmss_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Befintlig BmSS'
+        , Layer: 'fk.bmss.wms.v1:befintlig'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var forvaltningskartan_niva_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Förvaltningskartan nivå'
+        , Layer: 'fk.forvaltningskartan.wms.v1:fvk_niva'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var intag_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Intag'
+        , Layer: 'fk.dagvattenkartan.wms.v1:intag'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var kulvert_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Kulvert'
+        , Layer: 'fk.dagvattenkartan.wms.v1:kulvert'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+
+    var vattendrag_sn200 = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Vattendrag'
+        , Layer: 'fk.dagvattenkartan.wms.v1:vattendrag'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Fastighetskontoret - sn200'
+        , UseProxy: true
+    };
+    var kommunagd_mark_markistest = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Tomträtt'
+        , Layer: 'markistest:tomtratt'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Egen data - sn200'
+        , UseProxy: true
+    };
+
+    var fas_fastighet_yta_markistest = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'Fas fastighet yta'
+        , Layer: 'markistest:fas_fastighet_yta'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Egen data - sn200'
+        , UseProxy: true
+    };
+
+    var fvk_markistest = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'fvk'
+        , Layer: 'markistest:fvk'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Egen data - sn200'
+        , UseProxy: true
+    };
+
+    var tbl_search_markistest = {
+        Url: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wms'
+        , Name: 'fvk'
+        , Layer: 'markistest:tbl_search'
+        , Styles: undefined
+        , Format: 'image/png'
+        , Transparent: true
+        , Queryable: true
+        , GroupName: 'Egen data - sn200'
+        , UseProxy: true
+    };
+
+
+    GotMapEngine.Options.MinimizeOverlayControl = false;
+    GotMapEngine.Options.UseOpenStreetMapAsBaseLayer = true;
+
+    GotMapEngine.Options.SearchControlOptions.Enabled = false;
+    GotMapEngine.Options.DrawOptions.Polygon = false;
+    GotMapEngine.Options.DrawOptions.Line = true;
+    GotMapEngine.Options.DrawOptions.Marker = false;
+    GotMapEngine.Options.DrawOptions.Edit = false;
+    GotMapEngine.Options.DrawOptions.Remove = false;
+    GotMapEngine.Options.DrawOptions.ImportExport = true;
+
+    GotMapEngine.Options.DrawOptions.Position = GotMapEngine.Enums.ControlPositions.TopLeft;
+
+    var gotmap = new GotMapEngine.GotMap("GotMap");
+
+    gotmap.on('wmslayeradded', function (e){
+
+    });
+
+    gotmap.Ready(function (gotmap) {
+        @*if (GotMapEngine.IsMobile()) {
+            gotmap.AddMenuControl({ menu: @Html.GetJsonMenu(Url) });
+        }*@
+
+        //Initiating searchengines
+        //var allSearchEngine = GotMapEngine.SearchEngines.WFSProperties({ placeHolder: "Sök: Allt", name: "Allt", wfsUrl: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wfs', layer: 'markistest:tbl_search', properties: ['search_key', 'table', 'attr'], useProxy: true });
+
+        var avtalSearchEngine = GotMapEngine.SearchEngines.WFSProperties({ placeHolder: "Sök: Avtal", name: "Avtal", wfsUrl: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wfs', layer: 'markistest:avtal_search', properties: ['avtalsnr', 'table_origin'], useProxy: true });
+
+        var tomtrattSearchEngine = GotMapEngine.SearchEngines.WFSProperties({ placeHolder: "Sök: Tomträtt", name: "Tomträtt", wfsUrl: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wfs', layer: 'markistest:tomtratt', properties: ['avtalsnr', 'trakt'], useProxy: true });
+
+        var streetSearchEngine = GotMapEngine.SearchEngines.GBGGeoCoder({ gotmap: gotmap, name: 'Adresser', placeHolder: 'Sök: Adresser' });
+
+        //Adding searchcontrol
+        gotmap.AddSearchControl({ position: GotMapEngine.Enums.ControlPositions.TopLeft, useMarkers: true });
+
+        //Adding searchengines to searchenginecontrol
+        gotmap.AddSearchEngine(streetSearchEngine);
+        gotmap.AddSearchEngine(tomtrattSearchEngine);
+        gotmap.AddSearchEngine(avtalSearchEngine);
+
+        //Connecting to MarkIS
+        @*To do - ADD a switch to enable or disable connection to Markis *@
+        gotmap.initializeMarkisConnection(gotmap, { baseConnectionUrl: '@(ViewBag.MarkisConnectionUrl)?username=', wfsSearchUrl: 'http://sn200iw01.staden.gotheborg.net:8280/geoserver/wfs', layer: 'markistest:tbl_search', properties: ['search_key'] });
+
+
+        //gotmap.AddPrintModule();
+        gotmap.addCustomPrintModule(gotmap);
+        gotmap.AddFullscreenControl();
+        gotmap.AddWmsInformationControl({disableOnClick: false});
+        gotmap.AddFindMeControl({ setMarker: true });
+        gotmap.Draw.EnableDrawing('drawlayer');
+
+
+
+
+        //gotmap.OverlayManager.AddWmsLayer(open_styrostall);
+
+        /*gotmap.EventManager.OnStreetSearchErrorCallback = function() {
+            toastr.error('Gatan hittades inte.', '');
+        };
+
+        gotmap.EventManager.OnStreetSearchGeometryNotFoundCallback = function() {
+            toastr.error('Geometrin för adressen hittades inte.', '');
+        };*/
+
+        //GotMapEngine.PreDefinedWmsLayerDefinitions.open_Cykelbanor.EnableOnLoad = true;
+        //gotmap.OverlayManager.AddWmsLayer(GotMapEngine.PreDefinedWmsLayerDefinitions.open_Cykelbanor);
+
+        //gotmap.OverlayManager.AddWmsLayer(open_starttillstand);
+        //gotmap.OverlayManager.AddWmsLayer(internal_Forvaltningskartan);
+        //gotmap.OverlayManager.AddWmsLayer(open_Cykelbanor);
+
+
+        /*var server = undefined;
+        if (GotMapEngine.OGCServerManager.ServerExists(open_Cykelbanor.Url, GotMapEngine.Enums.OGCServerTypes.WMS)) {
+            server = GotMapEngine.OGCServerManager.GetServer(open_Cykelbanor.Url, GotMapEngine.Enums.OGCServerTypes.WMS);
+        }
+        else {
+            //create a temporary server to maka the getfeatureinfo call, if layer uses proxy the server will not be corsenabled->useproxy
+            server = new GotMapEngine.Classes.OGCServer(open_Cykelbanor.Url, GotMapEngine.Enums.OGCServerTypes.WMS, { isCorsEnabled: open_Cykelbanor.UseProxy != undefined ? !open_Cykelbanor.UseProxy : true });
+        }
+
+        var bounds = {
+            SouthWest: {
+                Lat: GotMapEngine.Options.DefaultLat - 0.002,
+                Lng: GotMapEngine.Options.DefaultLng - 0.002
+            },
+            NorthEast: {
+                Lat: GotMapEngine.Options.DefaultLat + 0.002,
+                Lng: GotMapEngine.Options.DefaultLng + 0.002
+            }
+        };
+        server.GetMapAsync(open_Cykelbanor.Layer, bounds, 256, 256).done(function (a,b,c,d){
+            console.log('GetMap succeded');
+        }).fail(function (a,b,c,d){
+            console.log('GetMap failed');
+        });
+
+
+        server.DescribeLayerAsync(open_Cykelbanor.Layer).done(function (a,b,c,d){
+            console.log('DescribeLayer succeded');
+        }).fail(function (a,b,c,d){
+            console.log('DescribeLayer failed: ' + a.error);
+        });*/
+
+        //var wfsServer = undefined;
+        //if (GotMapEngine.OGCServerManager.ServerExists(open_Cykelbanor.WFSServerUrl, GotMapEngine.Enums.OGCServerTypes.WFS)) {
+        //    wfsServer = GotMapEngine.OGCServerManager.GetServer(open_Cykelbanor.WFSServerUrl, GotMapEngine.Enums.OGCServerTypes.WFS);
+        //}
+        //else {
+        //    //create a temporary server to maka the getfeatureinfo call, if layer uses proxy the server will not be corsenabled->useproxy
+        //    wfsServer = new GotMapEngine.Classes.OGCServer(open_Cykelbanor.WFSServerUrl, GotMapEngine.Enums.OGCServerTypes.WFS, { isCorsEnabled: open_Cykelbanor.UseProxy != undefined ? !open_Cykelbanor.UseProxy : true });
+        //}
+        //wfsServer.DescribeFeatureTypeAsync(open_Cykelbanor.Layer).done(function (a,b,c,d){
+        //    console.log('DescribeFeatureType succeded');
+        //    //
+        //}).fail(function (a,b,c,d){
+        //    console.log('DescribeFeatureType failed: ' + a.error);
+        //    //
+        //});
+
+
+        /*var gwcServer = GotMapEngine.OGCServerManager.GetServer('//internal.geodata.tkgbg.se/gwc/service/wms', GotMapEngine.Enums.OGCServerTypes.WMS);
+        gwcServer.DescribeLayerAsync('orto:orto_2008').done(function (a,b,c,d){
+            console.log('DescribeLayer succeded');
+        }).fail(function (a,b,c,d){
+            console.log('DescribeLayer failed: ' + a.error);
+        });*/
+
+
+
+        //internal.geodata.tkgbg.se/gwc/service/wms
+        //var bounds =  { SouthWest: { Lat: 7896441.86254256, Lng: 1314640.4494767464 }, NorthEast: { Lat: 7916391.926924993, Lng: 1351330.2230536311 } }
+        //gwcServer.GetMapAsync('bk:bakgrund', bounds, 3200, 1740, { srs: 'EPSG:3857', format: 'image/png', format_options: 'dpi:300' }).done(function (a, b, c, d){
+        //
+        //}).fail(function (a, b, c, d){
+        //
+        //});
+
+        //gotmap.GeoJsonManager.AddFeaturesToLayer([{
+        //    "type": "Feature",
+        //    "properties": {
+        //        "Id": "1"
+        //        , "useMarkers": "true"
+        //        , "popUpContent": "Göteborg"
+        //    }, "geometry": { "type": "Point", "coordinates": [GotMapEngine.Options.DefaultLng, GotMapEngine.Options.DefaultLat] }
+        //}], 'Göteborg');
+        //gotmap.AddLayerToLayersControl('Göteborg');
+
+        //gotmap.GeoJsonManager.AddFeaturesToLayer([{
+        //    "type": "Feature",
+        //    "properties": {
+        //        "Id": "1"
+        //        , "useMarkers": "true"
+        //        , "popUpContent": "Trafikkontoret"
+        //    }, "geometry": {
+        //        "type": "Point", "coordinates": [11.964840888977053, 57.707186670699] }
+        //}], 'Trafikkontoret');
+        //gotmap.AddLayerToLayersControl('Trafikkontoret');
+
+    });
+
+
+    //gotmap.AddInformationToLayersControl('Manage tile/wms/object layers in this panel.');
+
+
+    // http://www.google.se:80
+    // //www.google.se:80
+    // www.google.se:80
+    // google.se:80
+    // http://8.8.8.8:80
+    // 8.8.8.8:80
+    // http://localhost:80/GotMap
+    // //localhost:80/GotMap
+    // localhost/GotMap
+
+    function URL(url){
+        this.originalUrl = url;
+
+        var containsDot = url.indexOf('.') != -1 ? true : false;
+        var containsColon = url.indexOf(':') != -1 ? true : false;
+
+        if (url.indexOf('//') == 0) {
+            url = url.substr(url.indexOf('//')+2);
+        }
+
+        this.query = undefined;
+        if (url.indexOf('?') != -1) {
+            this.query = url.substr(url.indexOf('?')+1);
+            url = url.substr(0, url.indexOf('?'));
+        }
+
+        this.protocol = location.protocol.indexOf(':') != -1 ? location.protocol.substr(0, location.protocol.indexOf(':')) : location.protocol;
+        if (url.indexOf('://') != -1) {
+            this.protocol = url.substr(0, url.indexOf('://'));
+            url = url.substr(url.indexOf('://')+3);
+        }
+
+        this.path = undefined;
+        if (url.indexOf('/') != -1) {
+            this.path = url.substr(url.indexOf('/')+1);
+            url = url.substr(0, url.indexOf('/'));
+        }
+
+        this.port = undefined;
+        if (url.indexOf(':') != -1) {
+            this.port = url.substr(url.indexOf(':')+1);
+            url = url.substr(0, url.indexOf(':'));
+        }
+
+        this.host = url;
+
+        this.toString = function (){
+            var str = '';
+            if (this.protocol)
+                str += this.protocol + '://';
+            str += this.host;
+            if (this.path)
+                str += '/' + this.path;
+            if (this.query)
+                str += '?' + this.query;
+            return str;
+        };
+
+        this.equals = function (url){
+            if (typeof url === 'string' && this.toString().toLowerCase() == new URL(url).toString().toLowerCase())
+                return true;
+            if (this.toString().toLowerCase() == url.toString().toLowerCase())
+                return true;
+            return false;
+        };
+    };
+
+    //var url = new URL('http://www.google.se:80');
+    //var url1 = new URL('//www.google.se:80');
+    //var url2 = new URL('http://www.google.se:80/');
+    //var url3 = new URL('google.se:80');
+    //var url4 = new URL('http://www.google.se');
+    //var url5 = new URL('http://www.google.se:80?bubba=1&boba=2');
+    //var url6 = new URL('http://8.8.8.8:80');
+    //var url7 = new URL('http://localhost:80/GotMap/Test');
+    //var url8 = new URL('//localhost:80/GotMap');
+    //var url9 = new URL('localhost/GotMap');
+
+    //console.log(url8);
+</script>
+
