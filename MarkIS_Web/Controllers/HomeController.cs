@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.DirectoryServices;
+using System.DirectoryServices.AccountManagement;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace MarkisWeb.Controllers
 {
@@ -26,5 +29,8 @@ namespace MarkisWeb.Controllers
 
             return View();
         }
+
+     
+
     }
 }

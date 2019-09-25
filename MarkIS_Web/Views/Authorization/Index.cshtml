@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MarkISWeb.Models.Group>
+
+@{
+    ViewBag.Title = "Användaren behörighetsgrupper";
+}
+
+<h2>Behörighetsgrupper</h2>
+
+<p>
+   
+       Aktuell användaren '@ViewBag.UserName' har följande grupptillhörigheter
+   
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeName)
+            </td>
+         
+        </tr>
+    }
+
+</table>

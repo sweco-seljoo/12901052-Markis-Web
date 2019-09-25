@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes">
-    <title>GotMap</title>
+    <title>Fastighetskontoret - MarkIS Web</title>
 
     <link href="~/Content/tkgraphicalprofile.css" rel="stylesheet" />
     <link href="~/Content/print.css" rel="stylesheet" media="print" />
@@ -43,7 +43,7 @@
     }
     else
     {
-        <script src="@(ViewBag.GotMapUrl)/Dist/gotmap-@(ViewBag.CurrentVersion).min.js?ticks=@DateTime.Now.Ticks"></script>
+        <script src="@(ViewBag.GotMapUrl)/Dist/gotmap-@(ViewBag.GotMapVersion).min.js?ticks=@DateTime.Now.Ticks"></script>
         @*<script src="@(ViewBag.GotMapUrl)/Dist/Extensions/PredefinedWMS-1.2.0.js?ticks=@DateTime.Now.Ticks"></script>*@
 
     }
@@ -99,14 +99,14 @@
 </head>
 <body @*oncontextmenu="return false;"*@>
     <div class="navbar navbar-inverse navbar-fixed-top" id="topmenu">
-        <div class="container">
+        <div class="container">          
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Göteborg stad - Fastighetskontoret", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @title = ViewBag.AssemblyVersion })
+                @Html.ActionLink("Göteborg Stad Fastighetskontoret", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @title = ViewBag.AssemblyVersion })
             </div>
             <div class="navbar-collapse collapse">
                 @*@Html.GetMenu()*@

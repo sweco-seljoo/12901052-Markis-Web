@@ -23,10 +23,26 @@ namespace MarkisWeb.Controllers
         {
             
             ViewBag.RootUrl = RootUrl;
+
+            // User Windows Authentication
+            ViewBag.UserName = (User.Identity.Name ?? "");
+
+            // Gotmap settings
             ViewBag.UseDevScripts = SettingsHelper.GetBool("UseDevScripts");
             ViewBag.GotMapUrl = SettingsHelper.GetString("GotMapUrl");
+            ViewBag.GotMapVersion = SettingsHelper.GetString("GotMapVersion");
+
+            // Markis - SignalR settings
             ViewBag.MarkisConnectionEnabled = SettingsHelper.GetBool("MarkisConnectionEnabled");
-            ViewBag.MarkisConnectionUrl = SettingsHelper.GetString("MarkisConnectionUrl");
+            ViewBag.MarkisConnectionUrl = SettingsHelper.GetString("MarkisConnectionUrl");            
+            ViewBag.MarkisEnableEdit = SettingsHelper.GetBool("MarkisEnableEdit");
+            
+            
+            // Internal GeoServer
+            ViewBag.GeoServerWFS = SettingsHelper.GetString("GeoServerWFS");
+            ViewBag.GeoServerWMS = SettingsHelper.GetString("GeoServerWMS");
+
+                                        
             base.OnActionExecuting(filterContext);
         }
 
