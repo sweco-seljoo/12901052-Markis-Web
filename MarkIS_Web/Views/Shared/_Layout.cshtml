@@ -28,14 +28,12 @@
     <script src="~/Scripts/highlight.pack.js"></script>
     <script src="~/Scripts/toastr.js"></script>
 
-    @*<script src="~/Dist/gotmap-1.13.0.min.js?ticks=@DateTime.Now.Ticks"></script>*@
-
-    <link rel="stylesheet" href="@(ViewBag.GotMapUrl)/Dev/gotmap-src.css?ticks=@DateTime.Now.Ticks" />
 
 
 
     @if (ViewBag.UseDevScripts)
     {
+        <link rel="stylesheet" href="@(ViewBag.GotMapUrl)/Dev/gotmap-src.css?ticks=@DateTime.Now.Ticks" />
         <script src="@(ViewBag.GotMapUrl)/Dev/gotmap-src.js?ticks=@DateTime.Now.Ticks"></script>
         @*<script src="~/Dev/gotmap.min.js?ticks=@DateTime.Now.Ticks"></script>*@
         @*<script src="@(ViewBag.GotMapUrl)/Dev/Extensions/PredefinedWMS-1.2.0.js?ticks=@DateTime.Now.Ticks"></script>*@
@@ -44,6 +42,7 @@
     else
     {
         <script src="@(ViewBag.GotMapUrl)/Dist/gotmap-@(ViewBag.GotMapVersion).min.js?ticks=@DateTime.Now.Ticks"></script>
+        <link rel="stylesheet" href="@(ViewBag.GotMapUrl)/Dev/gotmap-src.css?ticks=@DateTime.Now.Ticks" />
         @*<script src="@(ViewBag.GotMapUrl)/Dist/Extensions/PredefinedWMS-1.2.0.js?ticks=@DateTime.Now.Ticks"></script>*@
 
     }
@@ -60,7 +59,7 @@
 
     <script>
         GotMapEngine.Options.RelayProxyParameterName = 'url';
-        GotMapEngine.Options.RelayProxyUrl = '@(ViewBag.GotMapUrl)ProxyHandler.ashx';
+        GotMapEngine.Options.RelayProxyUrl = '@(ViewBag.GotMapProxyUrl)ProxyHandler.ashx';
         GotMapEngine.Options.GotMapAPIUrl = '@(ViewBag.GotMapUrl)';
     </script>
 

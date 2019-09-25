@@ -32,6 +32,9 @@ namespace MarkisWeb.Controllers
             ViewBag.GotMapUrl = SettingsHelper.GetString("GotMapUrl");
             ViewBag.GotMapVersion = SettingsHelper.GetString("GotMapVersion");
 
+            ViewBag.GotMapProxyUrl = SettingsHelper.GetString("GotMapProxyUrl");
+            
+
             // Markis - SignalR settings
             ViewBag.MarkisConnectionEnabled = SettingsHelper.GetBool("MarkisConnectionEnabled");
             ViewBag.MarkisConnectionUrl = SettingsHelper.GetString("MarkisConnectionUrl");            
