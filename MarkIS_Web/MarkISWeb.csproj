@@ -226,6 +226,9 @@
     <Content Include="Scripts\esm\popper-utils.js.map" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\GotMap\FK-WMS-Dev.js" />
+    <Content Include="Scripts\GotMap\SBK-WMS-1.0.0.js" />
+    <Content Include="Scripts\GotMap\Open-WMS-1.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
     <Content Include="Scripts\jquery-3.0.0.slim.js" />
@@ -233,8 +236,8 @@
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\GotMap\TKdefinedWMS-1.0.0.js" />
-    <Content Include="Scripts\GotMap\FKdefinedWMS-1.0.0.js" />
+    <Content Include="Scripts\GotMap\TK-WMS-1.0.0.js" />
+    <Content Include="Scripts\GotMap\FK-WMS-1.0.0.js" />
     <Content Include="Scripts\highlight.pack.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
